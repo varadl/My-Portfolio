@@ -1,0 +1,340 @@
+:root {
+  --bg: #0f172a;
+  --card: #020617;
+  --text: #ffffff;
+  --muted: #cbd5f5;
+  --accent: #f97316;
+
+  /* hero backgrounds */
+  --hero-dark: linear-gradient(135deg, #0b1224, #020617);
+  --hero-light: #f8fafc;
+}
+
+body.light {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --text: #020617;
+  --muted: #475569;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  z-index: 1000;
+}
+
+.corner-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.corner-name:hover {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ================= HERO ================= */
+header {
+  min-height: 100vh;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--hero-dark);
+}
+
+body.light header {
+  background: var(--hero-light);
+}
+
+.hero-text {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.hero-text:hover {
+  color: var(--accent);
+}
+
+.hero-name {
+  font-weight: 600;
+}
+
+header p {
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--text);
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover svg {
+  fill: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.outline:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 5rem 10%;
+}
+
+.card {
+  background: var(--card);
+  padding: 3rem;
+  border-radius: 14px;
+  max-width: 900px;
+  margin: 3rem auto;
+  border: 1px solid transparent;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.card:hover h2 {
+  color: var(--accent);
+}
+
+/* ================= SKILLS ================= */
+.skill-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-box span {
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    120deg,
+    transparent 50%,
+    rgba(249, 115, 22, 0.15) 50%
+  );
+  background-size: 220%;
+  background-position: left;
+  border: 1px solid #334155;
+  transition: all 0.4s ease;
+}
+
+.skill-box span:hover {
+  background-position: right;
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* ================= PROJECTS ================= */
+.project-card {
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--text);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  border-left-color: var(--accent);
+  transform: translateX(6px);
+}
+
+/* Light theme projects */
+body.light .project-card {
+  background: #f8fafc;
+  color: #020617;
+  border-left: 3px solid #020617;
+}
+
+body.light .project-card p {
+  color: #475569;
+}
+
+body.light .project-card:hover {
+  border-left-color: var(--accent);
+  background: #ffffff;
+}
+
+/* ================= CONTACT ================= */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  background: transparent;
+  border: 1px solid #334155;
+  padding: 0.8rem;
+  border-radius: 6px;
+  color: var(--text);
+  transition: border-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact button {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-text {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 4rem 5%;
+  }
+}
