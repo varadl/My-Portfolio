@@ -68,7 +68,7 @@ I enjoy building clean, responsive applications and continuously improving my pr
 This portfolio can be deployed easily using:
 - **GitHub Pages**
 - **Netlify**
-- **Vercel**
+
 
 ---
 
